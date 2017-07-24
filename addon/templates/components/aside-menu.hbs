@@ -1,0 +1,6 @@
+{{yield (hash 
+  elements=(hash
+    asideToggle=(component 'aside-toggle' click=(action 'toggle'))
+    asideBackdrop=(component 'aside-backdrop' progress=progress click=(action 'close'))
+  )
+)}}
