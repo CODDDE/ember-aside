@@ -256,9 +256,9 @@ export default Component.extend(
                   (side === "right" && isSwipingLeft);
 
         if (isClosingMovement || progress < autoCompleteThreshold) {
-            get(this, "sideMenu").close();
+            this.send('close');
         } else if (isOpeningMovement || progress >= autoCompleteThreshold) {
-            get(this, "sideMenu").open();
+            this.send('open');
         }
     },
 
