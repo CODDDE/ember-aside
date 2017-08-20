@@ -31,7 +31,8 @@ export default Component.extend(
     side: "left",
     width: "70%",
     rootNodeSelector: "body",
-
+    
+    slideToOpen: true,
     initialTapAreaWidth: 30,
     slightlyOpenWidth: 20,
     slightlyOpenAfter: 300,
@@ -118,14 +119,17 @@ export default Component.extend(
     },
 
     _setupEventListeners() {
-        const $rootNode = $(get(this, "rootNodeSelector"));
-        const onRootNodeTouch = bind(this, this._onRootNodeTouch);
+        if(get(this, 'slideToOpen')) {
+            const $rootNode = $(get(this, "rootNodeSelector"));
+            const onRootNodeTouch = bind(this, this._onRootNodeTouch);
 
-        $rootNode.on("touchstart", onRootNodeTouch);
+            $rootNode.on("touchstart", onRootNodeTouch);
+            
+            schedule("afterRender", () => {
+                set(this, "onTouchStart", onRootNodeTouch);
+            });
+        }
 
-        schedule("afterRender", () => {
-            set(this, "onTouchStart", onRootNodeTouch);
-        });
         const onMenuScroll = () => {
             if (!get(this, "disableMenu") && !get(this, "isInProgress")) {
                 set(this, "disableMenu", true);
