@@ -7,25 +7,31 @@ This approach makes easy to introduce multiple, specialized lateral menus not po
 Example: main "hamburger" menu on the left side while having a secondary menu for settings/filters specifics of
 the current visualized page.
 
+# Installation
 
-## Installation
+`ember install https://github.com/CODDDE/ember-aside.git`
+
+
+# Contributing
+
+## Download
 
 * `git clone <repository-url>` this repository
 * `cd ember-aside`
 * `npm install`
 
-## Running
+### Running
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-## Running Tests
+### Running Tests
 
 * `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building
+### Building
 
 * `ember build`
 
