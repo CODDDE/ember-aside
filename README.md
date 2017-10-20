@@ -1,6 +1,12 @@
 # ember-aside
 
-This README outlines the details of collaborating on this Ember addon.
+Draggable aside menu components.
+
+Shamelessy inspired on [ember-side-menu](https://github.com/tsubik/ember-side-menu) :) but refactored to use contextual components.
+This approach makes easy to introduce multiple, specialized lateral menus not possible with the original addon.
+Example: main "hamburger" menu on the left side while having a secondary menu for settings/filters specifics of
+the current visualized page.
+
 
 ## Installation
 
